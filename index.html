@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy 26 Yureshini 🎉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    overflow-x:hidden;
+    color:white;
+    animation: gradientBG 15s ease infinite;
+    background: linear-gradient(-45deg,#ff9a9e,#fad0c4,#a18cd1,#ff758c);
+    background-size:400% 400%;
+}
+
+/* Animated Gradient */
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Glass Sections */
+section{
+    padding:80px 20px;
+    margin:40px 20px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    box-shadow:0 8px 32px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+/* PASSWORD SCREEN WITH IMAGE */
+#passwordScreen{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    background:url("password-bg.jpg") no-repeat center center/cover;
+    position:relative;
+}
+
+/* Overlay */
+#passwordScreen::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:0;
+}
+
+#passwordScreen *{
+    position:relative;
+    z-index:1;
+}
+
+input{
+    padding:12px;
+    border-radius:20px;
+    border:none;
+    text-align:center;
+}
+    
+#ShineNote {
+        font-size: 14px
+    }
+
+#gift {
+    font-size:24px
+}
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    margin-top:10px;
+    cursor:pointer;
+}
+
+/* Slideshow */
+.slideshow-container{
+    max-width:450px;
+    margin:auto;
+}
+.slide{display:none;}
+.slide img{
+    width:100%;
+    border-radius:20px;
+}
+
+/* Video */
+.video-gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+.video-gallery video{
+    width:320px;
+    border-radius:15px;
+}
+
+/* Fixed Footer */
+footer{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    padding:15px;
+    background:rgba(0,0,0,0.6);
+}
+
+/* Floating Emojis */
+.balloon, .motion-sticker{
+    position:fixed;
+    bottom:-120px;
+    font-size:35px;
+    animation:floatUp linear infinite;
+    opacity:0.4;
+}
+
+@keyframes floatUp{
+    0%{transform:translateY(0) rotate(0deg);}
+    100%{transform:translateY(-150vh) rotate(360deg);}
+}
+
+/* Moving Sticker Image */
+.moving-sticker-img{
+    position:fixed;
+    bottom:-120px;
+    width:120px;
+    animation:floatUp 25s linear infinite;
+    opacity:0.6;
+}
+
+/* Sparkle Trail */
+.sparkle{
+    position:fixed;
+    pointer-events:none;
+    font-size:18px;
+    animation:fadeOut 1s forwards;
+}
+
+@keyframes fadeOut{
+    0%{opacity:1;}
+    100%{opacity:0; transform:translateY(-20px);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floating Emojis -->
+<div class="balloon" style="left:10%; animation-duration:10s;">🎈</div>
+<div class="balloon" style="left:70%; animation-duration:14s;">🎈</div>
+<div class="motion-sticker" style="left:30%; animation-duration:20s;">🎉</div>
+<div class="motion-sticker" style="left:85%; animation-duration:25s;">🎂</div>
+
+<!-- Replace sticker.png with your custom PNG -->
+<img src="sticker.png" class="moving-sticker-img" style="left:50%;">
+
+<!-- PASSWORD SCREEN -->
+<div id="passwordScreen">
+    <h1>🎉 Hey Birthday Girl! 🎉</h1>
+    <h2>🔐 Not a complete rewind still you'll be amazed</h2>
+
+    <p style="margin:15px 0; max-width:400px;">
+        C'mon give a try below ✨
+    </p>
+
+    <input type="password" id="passwordInput" placeholder="Enter Secret Code">
+    <button onclick="checkPassword()">Unlock Surprise 🎁</button>
+
+    <p style="margin-top:15px;">
+        Hint: what if you name a group for ur family the way you do usually 😉
+    </p>
+    
+    <p style="margin-top:15px;">
+        One more : <b>[yu[0:1:].upper() for yu in yureshini_family]</b>
+    </p>
+        
+    <p id="errorMsg" style="margin-top:10px; color:#ffdddd;"></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent" style="display:none; padding-bottom:90px;">
+
+<section>
+    <h1>Happy 26 Yureshini 🎂🎉</h1>
+    <p><br>Achieve lots like you own it 💖</p>
+    <button onclick="playMusic()">🎵 Play Music</button>
+    <audio id="birthdaySong">
+        <source src="birthday.mp3" type="audio/mpeg">
+    </audio>
+    <p id = "ShineNote">
+        <br>Touch anywhere on the screen and it'll shine just like you do✨
+    </p>
+</section>
+
+<section>
+    <h2>📸 Turning old 👵🏻</h2>
+    <p><br></p>
+    <div class="slideshow-container">
+        <div class="slide"><img src="image1.jpg"></div>
+        <div class="slide"><img src="image2.jpg"></div>
+        <div class="slide"><img src="image3.jpg"></div>
+        <div class="slide"><img src="image4.jpg"></div>
+    </div>
+</section>
+
+<section>
+    <h2>🎥 Never stop being Y(o)U</h2>
+    <div class="video-gallery">
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+        </video>
+        <video controls>
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+<section>
+    <h2>💌 Special Message</h2>
+    <p style="max-width:700px;margin:auto;">
+        Wishing you a yet another milestone of surviving 😄  
+    </p> 
+    <p style="max-width:700px;margin:auto;">
+  
+        May your 26th year be filled with happiness, laughter and success 🎉
+    </p>
+    <p id=gift style="max-width:700px;margin:auto;">
+        WAIT! WAIT! One more present for you ˚.🎁⋆
+    </p>
+</section>
+
+</div>
+
+<footer>
+Made by one of your fav annaee🦸‍♂️ & ofcourse GPT 😅
+</footer>
+
+<script>
+
+/* Password + Confetti */
+function checkPassword(){
+    var password=document.getElementById("passwordInput").value;
+    if(password==="MKYH"){
+        document.getElementById("passwordScreen").style.display="none";
+        document.getElementById("mainContent").style.display="block";
+       // 🎵 Auto Play Audio
+        const audio = document.getElementById("birthdaySong");
+
+        if (audio) {
+            audio.play()
+                .then(() => {
+                    console.log("Audio started successfully");
+                })
+                .catch(() => {
+                    // Ignore if autoplay blocked or file missing
+                    console.log("Audio not available or autoplay blocked");
+                });
+        }
+        launchConfetti();
+    }else{
+        document.getElementById("errorMsg").innerHTML="Enna ma ipadi panringley maa 😜";
+    }
+}
+
+/* Confetti Burst */
+function launchConfetti(){
+    for(let i=0;i<100;i++){
+        let conf=document.createElement("div");
+        conf.innerHTML="🎊";
+        conf.style.position="fixed";
+        conf.style.left=Math.random()*100+"%";
+        conf.style.top="-10px";
+        conf.style.fontSize="20px";
+        conf.style.animation="floatUp 5s linear forwards";
+        document.body.appendChild(conf);
+        setTimeout(()=>conf.remove(),5000);
+    }
+}
+
+/* Music */
+function playMusic(){
+    document.getElementById("birthdaySong").play();
+}
+
+/* Slideshow */
+var slideIndex=0;
+showSlides();
+function showSlides(){
+    var slides=document.getElementsByClassName("slide");
+    for(var i=0;i<slides.length;i++){
+        slides[i].style.display="none";
+    }
+    slideIndex++;
+    if(slideIndex>slides.length){slideIndex=1;}
+    slides[slideIndex-1].style.display="block";
+    setTimeout(showSlides,3000);
+}
+
+/* Cursor Sparkle */
+document.addEventListener("mousemove",function(e){
+    let sparkle=document.createElement("div");
+    sparkle.className="sparkle";
+    sparkle.innerHTML="✨";
+    sparkle.style.left=e.pageX+"px";
+    sparkle.style.top=e.pageY+"px";
+    document.body.appendChild(sparkle);
+    setTimeout(()=>sparkle.remove(),1000);
+});
+
+</script>
+
+</body>
+</html>
